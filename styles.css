@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+    height: 100vh;
+    display: flex;
+    background: #000000;
+}
+
+p {
+    margin-top: 4rem;
+    margin-left: 4rem;
+    border-radius: 8px;
+    font-size: 32pt;
+    font-weight: bold;
+    color: white;
+}
+
+div#display {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+}
+
+div#display button {
+    margin-left: 4rem;
+    margin-top: 2rem;
+    padding: 20px;
+}
+
+div#display button:hover { 
+    background-color: red;
+    border-radius: 5px;
+}
+
+div#display #jogador {
+    background-color: blue;
+    text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+div#display #timer {
+    background-color: red;
+    text-shadow: 1px 5px 4px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+div#tabuleiro {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: 20%;
+    margin: 2px;
+    margin-left: 5px;
+    position: relative;
+    transition: all 0.4s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.memory-card:active {
+    transform: scale(0.9);
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #675a10;
+    position: absolute;
+    padding: 20px;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.back-face.hide {
+    visibility: hidden;
+}
